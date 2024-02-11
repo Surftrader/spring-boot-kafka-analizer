@@ -13,9 +13,13 @@ import java.time.LocalDateTime;
 @ToString
 public class Data {
 
+    // sensor id
     private Long sensorId;
+    // time of sending information
     private LocalDateTime timestamp;
+    // sensor parameters
     private double measurement;
+    // sensor type
     private MeasurementType measurementType;
 
     public enum MeasurementType {

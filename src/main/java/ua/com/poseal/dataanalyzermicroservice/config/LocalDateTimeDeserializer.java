@@ -10,6 +10,9 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Type;
 import java.time.LocalDateTime;
 
+/**
+ * This class allows to deserialize LocalDateTime from json
+ */
 @Component
 @RequiredArgsConstructor
 public class LocalDateTimeDeserializer implements JsonDeserializer<LocalDateTime> {

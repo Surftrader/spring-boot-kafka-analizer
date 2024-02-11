@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <consumer>
+    <!--  Group number in Kafka that runs in a cluster of one machine  -->
     <groupId>1</groupId>
     <keyDeserializer>org.apache.kafka.common.serialization.StringDeserializer</keyDeserializer>
     <valueDeserializer>org.apache.kafka.common.serialization.StringDeserializer</valueDeserializer>

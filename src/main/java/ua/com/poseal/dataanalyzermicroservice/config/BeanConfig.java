@@ -11,6 +11,12 @@ import java.io.File;
 @Configuration
 public class BeanConfig {
 
+    /**
+     * This method describes the Kafka consumer configuration
+     * from the file consumer.xml
+     *
+     * @return XMLDocument
+     */
     @SneakyThrows
     @Bean
     public XML consumerXML() {

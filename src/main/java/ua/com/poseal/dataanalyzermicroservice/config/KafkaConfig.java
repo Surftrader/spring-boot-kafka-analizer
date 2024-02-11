@@ -13,23 +13,28 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This class describes the Kafka configuration
+ */
 @Configuration
 @RequiredArgsConstructor
 public class KafkaConfig {
 
+    // Kafka servers
     @Value("${spring.kafka.bootstrap-servers}")
     private String servers;
 
+    // List of topics
     @Value("${topics}")
     private List<String> topics;
 
     private final XML settings;
 
+    // bean with properties for configuration
     @Bean
     public Map<String, Object> receiverProperties() {
         Map<String, Object> props = new HashMap<>(5);
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, servers);
-
         props.put(
                 ConsumerConfig.GROUP_ID_CONFIG,
                 new TextXPath(
@@ -57,6 +62,7 @@ public class KafkaConfig {
         return props;
     }
 
+    // This method creates a receiver options instance with properties
     @Bean
     public ReceiverOptions<String, Object> receiverOptions() {
         ReceiverOptions<String, Object> receiverOptions = ReceiverOptions
@@ -68,6 +74,7 @@ public class KafkaConfig {
                         System.out.println("revoked: " + partitions));
     }
 
+    // This method creates a Kafka receiver
     @Bean
     public KafkaReceiver<String, Object> receiver(
             ReceiverOptions<String, Object> receiverOptions) {

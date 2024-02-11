@@ -11,6 +11,9 @@ import ua.com.poseal.dataanalyzermicroservice.model.Data;
 
 import java.time.LocalDateTime;
 
+/**
+ * This class allows to read data from Kafka and send it
+ */
 @Service
 @RequiredArgsConstructor
 public class KafkaDataReceiverImpl implements KafkaDataReceiver {
