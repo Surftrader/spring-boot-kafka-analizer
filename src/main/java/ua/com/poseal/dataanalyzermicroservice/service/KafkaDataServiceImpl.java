@@ -18,7 +18,7 @@ public class KafkaDataServiceImpl implements KafkaDataService {
 
     @Override
     public void handle(Data data) {
-        log.info("Data object {} was saved", data);
-        dataRepository.save(data);
+        Data saved = dataRepository.save(data);
+        log.info("Data object {} was saved", saved);
     }
 }
